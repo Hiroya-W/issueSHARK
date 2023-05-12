@@ -93,7 +93,7 @@ class JiraBackend(BaseBackend):
         # Connect to jira
         self.jira_client = JIRA(
             {'server': url_to_jira},
-            basic_auth=(self.config.issue_user, self.config.issue_password),
+            # basic_auth=(self.config.issue_user, self.config.issue_password),
             proxies=self.config.get_proxy_dictionary()
         )
 
