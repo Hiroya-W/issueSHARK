@@ -53,7 +53,7 @@ class IssueSHARK(object):
 
         # Create issue system if not already there
         try:
-            issue_system = IssueSystem.objects(url=cfg.tracking_url).get()
+            issue_system = IssueSystem.objects(project_id=project_id, url=cfg.tracking_url).get()
         except DoesNotExist:
             issue_system = IssueSystem(project_id=project_id, url=cfg.tracking_url).save()
         issue_system.last_updated = datetime.datetime.now()
